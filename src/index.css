@@ -1,0 +1,74 @@
+/*
+  Design tokens
+  -------------------------------------------------------------------
+  Palette drawn from the Maharashtrian bhagwa/kesari (saffron) and
+  Peshwa-ledger maroon, set against an ink-black page rather than the
+  generic cream-and-terracotta AI-default. The paper card mimics an
+  old बाड/वही (ledger) — appropriate for a project about handwriting
+  Marathi by hand, phonetically.
+*/
+:root {
+  --ink: #14121a;
+  --ink-soft: #201c29;
+  --paper: #f3ead9;
+  --paper-line: #d9c9a8;
+  --kesari: #e2962f;
+  --kesari-bright: #f2b25a;
+  --maroon: #8c2f2f;
+  --maroon-deep: #5e1f22;
+  --teal: #2f6f6a;
+  --text-on-ink: #f3ead9;
+  --text-muted: #b8afc4;
+
+  --font-display: "Noto Serif Devanagari", "Tiro Devanagari Marathi", serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  background-image: radial-gradient(circle at 12% 8%, rgba(226, 150, 47, 0.08), transparent 40%),
+    radial-gradient(circle at 88% 92%, rgba(47, 111, 106, 0.1), transparent 45%);
+  color: var(--text-on-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--kesari);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--kesari-bright);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
